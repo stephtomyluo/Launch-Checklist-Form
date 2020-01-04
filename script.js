@@ -33,7 +33,7 @@ window.addEventListener("load", function() {
     }
   }
 
-  allNumbers()
+  // allNumbers()
 
     // Functions
     let fullFuelLevel = () => {
