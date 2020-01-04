@@ -16,6 +16,16 @@ window.addEventListener("load", function() {
     ) {
       alert("All fields are required!");
       event.preventDefault();
+    } 
+    
+    if (isNaN(pilotNameInput.value) === false || isNaN(copilotNameInput.value) === false) {
+      alert("Text is required for Pilot and Co-Pilot");
+      event.preventDefault();
+    } 
+    
+    if (isNaN(fuelLevelInput.value) === true || isNaN(cargoMassInput.value) === true) {
+      alert("Numeric is required for Fuel Level and Cargo Mass");
+      event.preventDefault();
     }
 
     // Functions
