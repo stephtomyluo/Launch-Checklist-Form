@@ -7,13 +7,6 @@ window.addEventListener("load", function() {
   let fuelLevelInput = document.querySelector("input[name=fuelLevel]");
   let cargoMassInput = document.querySelector("input[name=cargoMass]");
 
-  let launchStatus = document.querySelector("#launchStatus");
-  let faultyItems = document.querySelector("#faultyItems");
-  let pilotStatus = document.querySelector("#pilotStatus");
-  let copilotStatus = document.querySelector("#copilotStatus");
-  let fuelStatus = document.querySelector("#fuelStatus");
-  let cargoStatus = document.querySelector("cargoStatus");
-
   form.addEventListener("submit", function(event) {
     if (
       pilotNameInput.value === "" ||
@@ -28,7 +21,6 @@ window.addEventListener("load", function() {
     // Functions
     let fullFuelLevel = () => {
       if (fuelLevelInput.value < 10000) {
-        event.preventDefault();
         document.getElementById("faultyItems").style.visibility = "visible";
         document.getElementById("fuelStatus").innerHTML =
           "Not enough fuel for journey";
@@ -51,7 +43,6 @@ window.addEventListener("load", function() {
         document.getElementById("launchStatus").innerHTML =
           "Shuttle not ready for launch";
         document.getElementById("launchStatus").style.color = "red";
-        event.preventDefault();
         return false;
       } else {
         document.getElementById("cargoStatus").innerHTML =
