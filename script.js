@@ -23,10 +23,17 @@ window.addEventListener("load", function() {
       event.preventDefault();
     } 
     
-    if (isNaN(fuelLevelInput.value) === true || isNaN(cargoMassInput.value) === true) {
+    let allNumbers = () => {
+      if (isNaN(fuelLevelInput.value) === true || isNaN(cargoMassInput.value) === true) {
       alert("Numeric is required for Fuel Level and Cargo Mass");
+      return false 
       event.preventDefault();
+    } else {
+      return true
     }
+  }
+
+  allNumbers()
 
     // Functions
     let fullFuelLevel = () => {
@@ -62,7 +69,7 @@ window.addEventListener("load", function() {
     };
 
     let readyToLaunch = () => {
-      if (lightCargo() === true && fullFuelLevel() === true) {
+      if (lightCargo() === true && fullFuelLevel() === true && allNumbers() === true) {
         event.preventDefault();
         document.getElementById("launchStatus").innerHTML =
           "Shuttle ready for launch";
